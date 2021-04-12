@@ -24,6 +24,29 @@
 <!-- then bootstrap -->
 <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "<%= process.env.FIREBASE_API_KEY %>",
+    authDomain: "message-stream-c0269.firebaseapp.com",
+    databaseURL: "https://message-stream-c0269-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "message-stream-c0269",
+    storageBucket: "message-stream-c0269.appspot.com",
+    messagingSenderId: "525937463696",
+    appId: "1:525937463696:web:dad6ac10efdd6b839e6315"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
 <!-- then .env file -->
 <script>var apiKey="<%= process.env.API_KEY %>";</script>
 
