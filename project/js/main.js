@@ -2,11 +2,18 @@ $(document).ready(function() {
   getWeather();
 })
 
-function getWeather() {
-  var url="https://api.openweathermap.org/data/2.5/weather?zip=90547,DE&appid=" + apiKey;
+function getWeather(searchQuery) {
+  var url="https://api.openweathermap.org/data/2.5/weather?q=" + searchQuery + "&units=metric&appid=5838ee47a07f52f9fc45c48890d46e10" + apiKey;
   $.ajax(url, {success: function(data){
     console.log(data);
+    $(".city").text(data.name);
+    $(".temp").text(data.main.temp);
   }})
+}
+
+function searchWeather() {
+  var searchQuery = $(".search").val();
+  getWeather(searchQuery);
 }
 
 //function myFunction() {
